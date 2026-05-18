@@ -1,0 +1,111 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary: #FF9933;
+    --secondary: #FFD700;
+    --bg-dark: #0E1117;
+    --text-light: #F0F2F6;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+.stApp {
+    background: linear-gradient(135deg, #0E1117 0%, #1c1c1c 100%);
+    color: var(--text-light);
+    font-family: 'Outfit', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(to right, #FFD700, #FF9933);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.chat-bubble {
+    border-radius: 20px;
+    padding: 15px;
+    margin: 10px 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.user-bubble {
+    background: var(--glass);
+    border-left: 4px solid var(--secondary);
+}
+
+.bot-bubble {
+    background: rgba(255, 153, 51, 0.1);
+    border-left: 4px solid var(--primary);
+}
+
+/* Glassmorphism sidebar */
+[data-testid="stSidebar"] {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom button */
+.stButton>button {
+    background: linear-gradient(45deg, #FF9933, #FFD700);
+    color: #000;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 153, 51, 0.4);
+}
+
+/* ── Chat input: ensure typed text is always visible ────────────────────── */
+[data-testid="stChatInput"] textarea,
+[data-testid="stChatInput"] input,
+[data-testid="stChatInputTextArea"],
+.stChatInput textarea,
+.stChatInput input,
+.stTextInput input,
+div[data-baseweb="textarea"] textarea {
+    background: rgba(255,255,255,0.08) !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    caret-color: #FFD700 !important;
+    border: 1px solid rgba(255, 215, 0, 0.35) !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    font-family: 'Outfit', sans-serif !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder,
+.stChatInput textarea::placeholder {
+    color: rgba(240, 242, 246, 0.5) !important;
+}
+
+[data-testid="stChatInput"] textarea:focus,
+.stChatInput textarea:focus {
+    border-color: rgba(255,215,0,0.6) !important;
+    box-shadow: 0 0 8px rgba(255,215,0,0.2) !important;
+    outline: none !important;
+}
+
+[data-testid="stChatInput"] * {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+/* Chat messages styling */
+[data-testid="stChatMessage"] {
+    border-radius: 16px;
+    padding: 12px;
+    margin: 8px 0;
+    backdrop-filter: blur(8px);
+}
